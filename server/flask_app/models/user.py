@@ -28,6 +28,22 @@ class User:
 
         user_id = connectToMySQL(db).query_db(query, data)
         return user_id
+    @classmethod
+    def CREATE_ADMIN(cls):
+        query = "INSERT INTO users (first_name, last_name, email, password) VALUES ( %(first_name)s, %(last_name)s, %(email)s, %(password)s );"
+
+        plain_pass = 'asdfasdf'
+        pw_hash = bcrypt.generate_password_hash(plain_pass)
+
+        data = {
+            "first_name":"James",
+            "last_name":"Reeder",
+            "email":"reederje@gmail.com",
+            "password":pw_hash
+        }
+
+        user_id = connectToMySQL(db).query_db(query, data)
+        return user_id
 
 
     @classmethod
@@ -50,7 +66,7 @@ class User:
             flash("Invalid Email/Password", "login")
             return False
         
-        query = "SELECT * FROM users WHERE email = %(login_email)s;"
+        query = "SELECT * FROM users WHERE email = %(email)s;"
         results = connectToMySQL(db).query_db(query, data)
 
         if len(results) < 1:
