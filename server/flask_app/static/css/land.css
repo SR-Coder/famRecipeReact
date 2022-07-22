@@ -1,0 +1,22 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(33, 33, 33);
+    color: whitesmoke;
+}
+
+.bg-cust-dark{
+    background-color: rgb(100, 100, 100);
+    box-shadow: 3px 3px 5px 2px black;
+}
+
+.width-sm{
+    width: 18rem;
+}
+
+.mt-50{
+    margin-top: 25vh;
+}
