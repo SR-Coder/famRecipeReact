@@ -1,7 +1,7 @@
 # Family recipe backend API
 import imp
 from flask_app import app
-from flask_app.controllers import home, api
+from flask_app.controllers import home, api_docs, api
 
 
 if __name__ == "__main__":

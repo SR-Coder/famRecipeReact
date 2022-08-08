@@ -5,7 +5,9 @@ from flask_app.config.config import Config
 import re
 
 app = Flask(__name__)
+api = app
 db = Config.DATABASE_NAME
 bcrypt = Bcrypt()
 app.config.from_object(Config)
 
+jwt = JWTManager(api)

@@ -81,6 +81,34 @@ class User:
         session["user_id"] = user_in_db.id
         return True
 
+    @classmethod
+    def token_user_login(cls,data):
+        if not EMAIL_REGEX.match(data['email']):
+            msg = {
+                "error": "Not a valid email address/password!",
+                "status": False
+            }
+            return msg
+
+        query = "SELECT * FROM users WHERE email = %(email)s;"
+        results = connectToMySQL(db).query_db(query, data)
+
+        if len(results) < 1:
+            msg = {
+                "error": "Not a valid email address/password!",
+                "status": False
+            }
+            return msg
+
+        user_in_db = cls(results[0])
+        if not bcrypt.check_password_hash(user_in_db.password, data['password']):
+            msg = {
+                "error": "Not a valid email address/password!",
+                "status": False
+            }
+            return msg
+
+        return {"status":True}
 
     
 
