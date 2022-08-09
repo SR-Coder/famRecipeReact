@@ -5,5 +5,5 @@ from flask_app.controllers import home, api_docs, api
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5500)
 
