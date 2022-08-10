@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, {useState } from "react";
 import axios from "axios"
 
 function Login(props) {
@@ -10,7 +10,7 @@ function Login(props) {
     function logUserIn(event){
         axios({
             method: "POST",
-            url:"/token",
+            url:"http://localhost:5500/api/token",
             data:{
                 email: loginForm.email,
                 password: loginForm.password
@@ -45,7 +45,24 @@ function Login(props) {
         <div>
             <h1>Login</h1>
             <form className="login">
-                
+                <input
+                    onChange={handleChange}
+                    type="email" 
+                    text={loginForm.email}
+                    name="email"
+                    placeholder="Email"
+                    value={loginForm.email}
+                />
+                <input 
+                    onChange={handleChange}
+                    type="password" 
+                    text={loginForm.password}
+                    name="password"
+                    placeholder="Password"
+                    value={loginForm.password}
+                />
+
+                <button onClick={logUserIn}>Submit</button>
             </form>
         </div>
     );
