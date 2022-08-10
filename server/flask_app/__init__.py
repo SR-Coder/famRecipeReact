@@ -6,7 +6,7 @@ from flask_cors import CORS, cross_origin
 import re
 
 app = Flask(__name__)
-# cors = CORS(app)
+cors = CORS(app)
 
 api = app
 db = Config.DATABASE_NAME

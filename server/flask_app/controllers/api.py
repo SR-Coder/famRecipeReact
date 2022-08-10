@@ -60,3 +60,11 @@ def text():
         "error": "None"
     }
     return res_body
+
+@api.get("/api/profile")
+def api_profile():
+    res_body ={
+        'msg': "this is a profile page",
+        'error': "None"
+    }
+    return res_body
