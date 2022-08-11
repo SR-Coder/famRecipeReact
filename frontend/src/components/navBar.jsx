@@ -40,7 +40,16 @@ const NavBar = props => {
     }
 
     const logout = () => {
-        props.removeToken()
+        axios({
+            method: "POST",
+            url: "http://localhost:5500/api/logout"
+        })
+        .then((res) => {
+            props.removeToken()
+        })
+        .catch((err) => {
+            console.log(err);
+        })
     }
 
     return(
@@ -51,6 +60,7 @@ const NavBar = props => {
 
             <form className="login">
                 <input 
+                    className="form-element"
                     onChange={onChangeHandler}
                     type="email" 
                     text={loginForm.email}
@@ -59,6 +69,7 @@ const NavBar = props => {
                     value={loginForm.email}
                 />
                 <input 
+                    className="form-element"
                     onChange={onChangeHandler}
                     type="password" 
                     text={loginForm.password}
@@ -66,11 +77,11 @@ const NavBar = props => {
                     placeholder="Password"
                     value={loginForm.password}
                 />
-                <button onClick={login}>Submit</button>
+                <button className="button-standard" onClick={login} >Submit</button>
             </form>
 
             : (
-                <button onClick={logout}>Logout</button>
+                <button className="button-standard" onClick={logout}>Logout</button>
             )}
 
         </div>

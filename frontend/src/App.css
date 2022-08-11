@@ -24,12 +24,9 @@
   color: white;
 }
 
-.nav-bar {
-  display: flex;
-  justify-content: space-between ;
-  align-items: center;
-  margin: 0px 50px;
-}
+
+
+
 
 .App-link {
   color: #61dafb;
@@ -42,4 +39,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Custom types added for me */
+
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+  margin: 0px 50px;
+}
+
+.form-element {
+  height: 25px;
+  width: 20em;
+  margin: 0px 10px;
+  border-radius: 5px;
+}
+
+.button-standard {
+  height: 30px;
+  border-radius: 5px;
 }
