@@ -27,7 +27,6 @@
 
 
 
-
 .App-link {
   color: #61dafb;
 }
@@ -45,10 +44,11 @@
 
 
 .nav-bar {
+  background-color: whitesmoke;
   display: flex;
   justify-content: space-between ;
   align-items: center;
-  margin: 0px 50px;
+  padding: 0px 50px;
 }
 
 .form-element {

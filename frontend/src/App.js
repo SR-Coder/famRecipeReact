@@ -11,14 +11,13 @@ function App() {
   return (
     <div className="App">
       <NavBar setToken={setToken} token={token} removeToken={removeToken}/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className='main-body'>
+        
+      </div>
+
       <FetchData />
       <p> {token} </p>
-      </header>
+
     </div>
   );
 }
